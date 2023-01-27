@@ -25,6 +25,7 @@ with open(CONFIG_NAME, "r") as f:
     chatgpt_init_params = json.load(f)
 logging.info(f"ChatGPT initialization parameters: {chatgpt_init_params}")
 
+# see pyChatGPT readme for info https://github.com/terry3041/pyChatGPT/blob/main/README.md
 chatgpt_api = ChatGPT(**chatgpt_init_params)
 logging.info("ChatGPT successfully initialized")
 
