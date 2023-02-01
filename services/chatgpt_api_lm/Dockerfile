@@ -5,9 +5,6 @@ WORKDIR /src
 COPY ./services/chatgpt_api_lm/requirements.txt /src/requirements.txt
 RUN pip install -r /src/requirements.txt
 
-ARG CONFIG_NAME
-ENV CONFIG_NAME ${CONFIG_NAME}
-
 COPY . /src
 
 RUN apt-get update && apt-get install snapd && apt install xvfb && apt install chromium-browser xvfb
