@@ -7,6 +7,11 @@ RUN pip install -r /src/requirements.txt
 
 COPY . /src
 
-RUN apt-get update && apt-get install snapd && apt install xvfb && apt install chromium-browser xvfb
+RUN apt-get update && apt-get -y install sudo
+
+RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
+USER docker
+
+CMD ["/bin/bash","-c","/src/startup.sh"]
 
 CMD gunicorn --workers=1 server:app -b 0.0.0.0:${SERVICE_PORT} --timeout=300
