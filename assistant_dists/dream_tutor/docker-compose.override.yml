@@ -22,9 +22,9 @@ services:
       replicas: 1
       resources:
         limits:
-          memory: 2G
+          memory: 3G
         reservations:
-          memory: 2G
+          memory: 3G
 
   badlisted-words:
     build:
@@ -63,9 +63,9 @@ services:
     deploy:
       resources:
         limits:
-          memory: 100M
+          memory: 200M
         reservations:
-          memory: 100M
+          memory: 200M
     env_file:
     - .env
     environment:
@@ -117,9 +117,9 @@ services:
     deploy:
       resources:
         limits:
-          memory: 128M
+          memory: 256M
         reservations:
-          memory: 128M
+          memory: 256M
     env_file:
     - .env
 
@@ -173,9 +173,9 @@ services:
     deploy:
       resources:
         limits:
-          memory: 5G 
+          memory: 6G 
         reservations:
-          memory: 5G
+          memory: 6G
 
   intent-catcher:
     env_file: [.env]
