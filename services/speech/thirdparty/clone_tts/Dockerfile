@@ -6,9 +6,11 @@ COPY requirements.txt .
 RUN rm -r /etc/apt/sources.list.d && \
     apt-get install git && \
     pip install -r requirements.txt && \
-    rm requirements.txt && \
-    git clone https://github.com/CorentinJ/Real-Time-Voice-Cloning.git . && \
+    rm requirements.txt
+
+RUN git clone https://github.com/CorentinJ/Real-Time-Voice-Cloning.git . && \
     git checkout 8f71d678d2457dffc4d07b52e75be11433313e15 && \
+    pip install --upgrade pip && \
     pip install -r requirements.txt
 
 RUN apt-get update && \
