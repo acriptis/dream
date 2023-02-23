@@ -12,10 +12,10 @@ services:
     environment:
       - CUDA_VISIBLE_DEVICES=0
 
-  nemo:
-    command: uvicorn main:app --host 0.0.0.0 --reload --port 4343
+  wenet:
+    command: bash /app/start.sh
     build:
-      context: services/speech/thirdparty/nemo
+      context: services/speech/thirdparty/wenet
     depends_on:
       - agent
     ports:
