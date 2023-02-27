@@ -19,7 +19,7 @@ def update_mistakes_state(requested_data):
     results = []
     st_time = time.time()
     dialog = requested_data["dialog"]
-    logger.info(f"dialog: {dialog}")
+    # logger.info(f"dialog: {dialog}")
     # for filename in os.listdir("../skills/dff_language_practice_skill/data"):
     #     f = os.path.join("../skills/dff_language_practice_skill/data", filename)
     #     if os.path.isfile(f):
